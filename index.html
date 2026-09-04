@@ -16,7 +16,7 @@ const supabaseClient =
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>the second awesome</title>
+<title>My Vocab Chinese</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,18 +25,18 @@ const supabaseClient =
 
 <style>
 :root{
-    --bg:#F7F7FF;
-    --panel:#FFFFFF;
-    --panel2:#EEF0FF;
-    --border:rgba(87,56,175,.15);
-    --text:#241D3D;
-    --muted:#6E6780;
-    --accent:#5738AF;
-    --accent-soft:#CFD4FC;
-    --success:#4D9B72;
+    --bg:#F2C4CD;
+    --panel:#0B2A57;
+    --panel2:#051F45;
+    --border:rgba(5,31,69,.14);
+    --text:#F2C4CD;
+    --muted:#5F6C80;
+    --accent:#F2C4CD;
+    --accent-soft:#051F45;
+    --success:#2F7D5A;
     --danger:#D65C6B;
     --warning:#C58A28;
-    --shadow:0 12px 35px rgba(87,56,175,.12);
+    --shadow:0 12px 35px rgba(5,31,69,.10);
     --radius:16px;
 }
 
@@ -48,7 +48,7 @@ body{
     font-family:Inter,sans-serif;
     color:var(--text);
     background:
-        radial-gradient(circle at 90% 5%,rgba(207,212,252,.65),transparent 25%),
+        radial-gradient(circle at 90% 5%,rgba(242,196,205,.55),transparent 25%),
         var(--bg);
 }
 
@@ -466,15 +466,6 @@ tr:hover td{
     gap:7px;
 }
 
-.level{
-    display:inline-flex;
-    padding:5px 9px;
-    border-radius:99px;
-    color:var(--accent);
-    background:rgba(207,212,252,.45);
-    font-size:11px;
-    font-weight:700;
-}
 
 
 .example-text{
@@ -579,7 +570,7 @@ tr:hover td{
     padding:25px;
     border:1px solid var(--border);
     border-radius:22px;
-    background:linear-gradient(145deg,#FFFFFF,#EEF0FF);
+    background:linear-gradient(145deg,#0B2A57,#123764);
     box-shadow:var(--shadow);
     backface-visibility:hidden;
 }
@@ -697,7 +688,7 @@ tr:hover td{
 
 .match-card.selected{
     border-color:var(--accent);
-    background:rgba(207,212,252,.45);
+    background:rgba(242,196,205,.55);
 }
 
 .match-card.matched{
@@ -768,7 +759,7 @@ tr:hover td{
     margin-bottom:15px;
     border-radius:99px;
     color:var(--accent);
-    background:rgba(207,212,252,.45);
+    background:rgba(242,196,205,.55);
     font-size:11px;
     font-weight:700;
 }
@@ -840,7 +831,7 @@ tr:hover td{
     margin-bottom:20px;
     border-radius:99px;
     color:var(--accent);
-    background:rgba(207,212,252,.45);
+    background:rgba(242,196,205,.55);
     font-size:11px;
     font-weight:700;
 }
@@ -1217,6 +1208,248 @@ tr:hover td{
     }
 }
 </style>
+
+<style id="soft-eye-theme">
+:root{
+  --bg:#F2C4CD !important;
+  --panel:#051F45 !important;
+  --panel2:#051F45 !important;
+
+  /* softer, less glaring text */
+  --text:#E8DDE1 !important;
+  --muted:#B9AEB3 !important;
+
+  /* pink is used as a restrained detail/accent */
+  --accent:#F2C4CD !important;
+  --accent-soft:#E8AEBB !important;
+
+  --primary:#F2C4CD !important;
+  --primary-color:#F2C4CD !important;
+
+  --border:rgba(242,196,205,.22) !important;
+  --success:#79B89A !important;
+  --danger:#C9828C !important;
+  --warning:#C9A46A !important;
+
+  --shadow:0 12px 35px rgba(5,31,69,.16) !important;
+}
+
+/* Main background */
+body,
+#authScreen,
+.app{
+  background:#F2C4CD !important;
+  color:#E8DDE1 !important;
+}
+
+/* Main dark surfaces */
+.card,.panel,.review-card,.stat-card,.table-wrapper,
+.vault-card,.word-card,.setup-card{
+  background:#051F45 !important;
+  color:#E8DDE1 !important;
+  border:1px solid rgba(242,196,205,.22) !important;
+}
+
+/* Do NOT force bright white on every child */
+.card *, .panel *, .review-card *, .stat-card *,
+.table-wrapper *, .vault-card *, .word-card *, .setup-card *{
+  color:#E8DDE1;
+}
+
+.brand h1,.header *{
+  color:#E8DDE1 !important;
+}
+.brand small,.muted,.secondary-text,.hint,.help-text,
+.page-title p,.stat-label,.growth-top,.question-label,
+.review-count{
+  color:#B9AEB3 !important;
+}
+
+/* Header / navigation */
+.header{
+  background:transparent !important;
+}
+.tabs{
+  background:rgba(5,31,69,.96) !important;
+  border:1px solid rgba(242,196,205,.20) !important;
+}
+.tab{
+  color:#B9AEB3 !important;
+}
+.tab:hover{
+  color:#F2C4CD !important;
+  background:rgba(242,196,205,.08) !important;
+}
+.tab.active{
+  color:#051F45 !important;
+  background:#F2C4CD !important;
+}
+.logo{
+  background:#051F45 !important;
+  color:#F2C4CD !important;
+}
+
+/* Inputs: no near-white box */
+input,select,textarea,
+.setup-option{
+  background:#0B2A57 !important;
+  color:#E8DDE1 !important;
+  border:1px solid rgba(242,196,205,.25) !important;
+}
+input::placeholder,
+textarea::placeholder{
+  color:#8F858A !important;
+  opacity:1 !important;
+}
+input:focus,select:focus,textarea:focus{
+  border-color:#E8AEBB !important;
+  outline:none !important;
+  box-shadow:0 0 0 3px rgba(232,174,187,.10) !important;
+}
+.select option{
+  background:#051F45 !important;
+  color:#E8DDE1 !important;
+}
+
+/* Buttons */
+.btn-primary,
+.primary-btn,.add-btn,.save-btn,.submit-btn,
+button[onclick*="signIn"],button[onclick*="signUp"]{
+  background:#F2C4CD !important;
+  color:#051F45 !important;
+  border:1px solid #F2C4CD !important;
+}
+.btn-secondary,.secondary-btn{
+  background:#0B2A57 !important;
+  color:#E8DDE1 !important;
+  border:1px solid rgba(242,196,205,.25) !important;
+}
+.btn-secondary:hover,.secondary-btn:hover{
+  background:#12345F !important;
+}
+.btn-danger{
+  color:#D99AA3 !important;
+  background:rgba(201,130,140,.10) !important;
+}
+.btn-success{
+  color:#09271B !important;
+  background:#79B89A !important;
+}
+
+/* Tables */
+th{
+  background:#051F45 !important;
+  color:#DDB4BF !important;
+  border-color:rgba(242,196,205,.20) !important;
+}
+td{
+  background:#051F45 !important;
+  color:#E8DDE1 !important;
+  border-top:1px solid rgba(242,196,205,.14) !important;
+}
+tr:hover td{
+  background:#0B2A57 !important;
+}
+
+/* Learning choices */
+.option,.mode-btn,.tf-btn,.review-option,.choice,.match-card{
+  background:#051F45 !important;
+  color:#E8DDE1 !important;
+  border:1px solid rgba(242,196,205,.22) !important;
+}
+.option:hover,.mode-btn:hover,.tf-btn:hover,
+.review-option:hover,.choice:hover,.match-card:hover{
+  background:#0B2A57 !important;
+  color:#F2C4CD !important;
+  border-color:#E8AEBB !important;
+}
+.mode-btn.active{
+  background:#F2C4CD !important;
+  color:#051F45 !important;
+  border-color:#F2C4CD !important;
+}
+.match-card.selected{
+  background:rgba(242,196,205,.14) !important;
+}
+.match-card.matched{
+  opacity:.45;
+}
+
+/* Flashcard */
+.flash-face{
+  background:linear-gradient(145deg,#051F45,#0B2A57) !important;
+}
+.flash-word,.word,.accent,.highlight{
+  color:#F2C4CD !important;
+}
+
+/* Progress / badges */
+.progress,
+.test-progress-bar{
+  background:rgba(5,31,69,.28) !important;
+}
+.progress-bar,.test-progress-fill{
+  background:#F2C4CD !important;
+}
+.badge,.tag,.pill{
+  background:#0B2A57 !important;
+  color:#F2C4CD !important;
+}
+
+/* Auth */
+.auth-card{
+  background:#051F45 !important;
+  color:#E8DDE1 !important;
+  border:1px solid rgba(242,196,205,.25) !important;
+  box-shadow:0 24px 70px rgba(5,31,69,.22) !important;
+}
+.auth-card *{
+  color:#E8DDE1;
+}
+.auth-card input{
+  background:#0B2A57 !important;
+  color:#E8DDE1 !important;
+}
+.auth-card button{
+  background:#F2C4CD !important;
+  color:#051F45 !important;
+}
+.auth-heading p,.auth-message,.auth-sync-note,
+.auth-status span{
+  color:#B9AEB3 !important;
+}
+.auth-password-toggle{
+  color:#B9AEB3 !important;
+  background:transparent !important;
+}
+.auth-status{
+  background:rgba(121,184,154,.07) !important;
+  border-color:rgba(121,184,154,.20) !important;
+}
+.auth-status-icon{
+  background:#79B89A !important;
+  color:#09271B !important;
+}
+
+/* Toast */
+.toast{
+  background:#0B2A57 !important;
+  color:#E8DDE1 !important;
+  border-color:rgba(242,196,205,.22) !important;
+}
+
+/* PAGE TITLE — explicit contrast on the pink background */
+.page-title h2{
+  color:#051F45 !important;
+  font-weight:800 !important;
+  text-shadow:none !important;
+}
+.page-title p{
+  color:#6F5961 !important;
+  font-weight:500 !important;
+}
+</style>
+
 </head>
 
 <body>
@@ -1229,7 +1462,7 @@ tr:hover td{
         </div>
 
         <div class="auth-heading" id="authHeading">
-            <h2>the second awesome</h2>
+            <h2>My Vocab Chinese</h2>
             <p>Đăng nhập tài khoản.</p>
         </div>
 
@@ -1313,7 +1546,7 @@ tr:hover td{
         </div>
 
         <div>
-            <h1>the second awesome</h1>
+            <h1>My Vocab Chinese</h1>
             <small>Chinese vocabulary learning</small>
         </div>
     </div>
@@ -1472,19 +1705,6 @@ tr:hover td{
 
                 </div>
 
-
-                <select class="select" id="levelFilter" style="max-width:180px">
-
-                    <option value="all">Tất cả HSK</option>
-                    <option value="HSK 1">HSK 1</option>
-                    <option value="HSK 2">HSK 2</option>
-                    <option value="HSK 3">HSK 3</option>
-                    <option value="HSK 4">HSK 4</option>
-                    <option value="HSK 5">HSK 5</option>
-                    <option value="HSK 6">HSK 6</option>
-
-                </select>
-
             </div>
 
 
@@ -1497,7 +1717,6 @@ tr:hover td{
                         <tr>
                             <th>Từ</th>
                             <th>Nghĩa</th>
-                            <th>Level</th>
                             <th>Example</th>
                             <th>Ôn tiếp theo</th>
                             <th></th>
@@ -1593,24 +1812,6 @@ tr:hover td{
 
                     <div class="field">
 
-                        <label for="levelInput">
-                            Level
-                        </label>
-
-                        <select class="select" id="levelInput">
-                            <option value="HSK 1">HSK 1</option>
-                            <option value="HSK 2">HSK 2</option>
-                            <option value="HSK 3">HSK 3</option>
-                            <option value="HSK 4">HSK 4</option>
-                            <option value="HSK 5">HSK 5</option>
-                            <option value="HSK 6">HSK 6</option>
-                        </select>
-
-                    </div>
-
-
-                    <div class="field">
-
                         <label for="exampleInput">
                             Example
                         </label>
@@ -1654,15 +1855,15 @@ tr:hover td{
                 </p>
 
                 <code style="display:block;margin-bottom:15px;color:var(--accent)">
-                    Từ; Nghĩa; Pinyin; Example; Level
+                    Từ; Nghĩa; Pinyin; Example
                 </code>
 
                 <textarea
                     class="textarea"
                     id="bulkInput"
-                    placeholder="学习; học / học tập; xuéxí; 我每天学习中文。; HSK 1
-喜欢; thích; xǐhuān; 我喜欢中文。; HSK 1
-朋友; bạn; péngyou; 他是我的朋友。; HSK 1"
+                    placeholder="学习; học / học tập; xuéxí; 我每天学习中文。
+喜欢; thích; xǐhuān; 我喜欢中文。
+朋友; bạn; péngyou; 他是我的朋友。"
                 ></textarea>
 
                 <button
@@ -2060,8 +2261,6 @@ function normalizeWord(word){
 
         example: word.example || "",
 
-        level: word.level || "HSK 1",
-
         nextReview: word.nextReview || today(),
 
         reviewStage: Number.isFinite(word.reviewStage) ? word.reviewStage : 0,
@@ -2118,7 +2317,6 @@ async function saveWords(){
             meaning: word.meaning || "",
             pinyin: word.pinyin || "",
             example: word.example || "",
-            level: word.level || "HSK 1",
             created_at: word.createdAt || new Date().toISOString(),
             next_review: word.nextReview || today(),
             review_stage: Number(word.reviewStage || 0),
@@ -2158,7 +2356,6 @@ async function loadWords(){
             meaning: row.meaning || "",
             pinyin: row.pinyin || "",
             example: row.example || "",
-            level: row.level || "HSK 1",
             nextReview: row.next_review || today(),
             reviewStage: Number(row.review_stage || 0),
             mastered: Boolean(row.mastered),
@@ -2468,12 +2665,6 @@ function renderVault(){
         .toLowerCase();
 
 
-    const level =
-        document.getElementById(
-            "levelFilter"
-        ).value;
-
-
     const filtered =
         words
             .filter(word => {
@@ -2493,17 +2684,7 @@ function renderVault(){
                     word.pinyin
                         .toLowerCase()
                         .includes(search);
-
-
-                const matchesHSK =
-                    level === "all" ||
-                    word.level === level;
-
-
-                return (
-                    matchesSearch &&
-                    matchesHSK
-                );
+                    return matchesSearch;
 
             })
             .sort(
@@ -2558,12 +2739,6 @@ function renderVault(){
 
                     <td>
                         ${escapeHTML(word.meaning)}
-                    </td>
-
-                    <td>
-                        <span class="cefr">
-                            ${escapeHTML(word.level || "—")}
-                        </span>
                     </td>
 
                     <td>
@@ -2635,8 +2810,7 @@ async function addWord(
     word,
     meaning,
     pinyin = "",
-    example = "",
-    level = "HSK 1"
+    example = ""
 ){
 
     word =
@@ -2724,8 +2898,6 @@ async function addWord(
 
         example,
 
-        level: level || "HSK 1",
-
         nextReview:
             today(),
 
@@ -2769,9 +2941,6 @@ async function addWord(
 
                 example:
                     newWord.example,
-
-                level:
-                    newWord.level,
 
                 created_at:
                     newWord.createdAt,
@@ -5818,7 +5987,6 @@ document.getElementById("manualForm").addEventListener(
         const meaningValue = document.getElementById("meaningInput").value;
         const exampleValue = document.getElementById("exampleInput").value;
         const pinyinValue = document.getElementById("pinyinInput").value;
-        const levelValue = document.getElementById("levelInput").value;
 
         let success;
 
@@ -5828,8 +5996,7 @@ document.getElementById("manualForm").addEventListener(
                 wordValue,
                 meaningValue,
                 pinyinValue,
-                exampleValue,
-                levelValue
+                exampleValue
             );
             if(success){
                 cancelEditWord();
@@ -5840,8 +6007,7 @@ document.getElementById("manualForm").addEventListener(
                 wordValue,
                 meaningValue,
                 pinyinValue,
-                exampleValue,
-                levelValue
+                exampleValue
             );
             if(success){
                 event.target.reset();
@@ -5883,8 +6049,7 @@ document.getElementById("bulkImportBtn").addEventListener(
                 parts[0],
                 parts[1],
                 parts[2] || "",
-                parts[3] || "",
-                parts[4] || "HSK 1"
+                parts[3] || ""
             );
 
             if(success) added++;
@@ -5916,23 +6081,13 @@ document
     );
 
 
-document
-    .getElementById(
-        "levelFilter"
-    )
-    .addEventListener(
-        "change",
-        renderVault
-    );
-
-
 /* =========================================================
    EDIT WORD
 ========================================================= */
 
 let editingWordId = null;
 
-async function updateWord(id, word, meaning, pinyin, example, level){
+async function updateWord(id, word, meaning, pinyin, example){
     word = word.trim();
     meaning = meaning.trim();
     pinyin = pinyin.trim();
@@ -5966,7 +6121,6 @@ async function updateWord(id, word, meaning, pinyin, example, level){
             meaning: meaning,
             pinyin: pinyin,
             example: example,
-            level: level || "HSK 1"
         })
         .eq("id", id)
         .eq("user_id", user.id);
@@ -5983,7 +6137,6 @@ async function updateWord(id, word, meaning, pinyin, example, level){
         item.meaning = meaning;
         item.pinyin = pinyin;
         item.example = example;
-        item.level = level || "HSK 1";
     }
 
     renderAll();
@@ -5998,7 +6151,6 @@ function startEditWord(id){
     document.getElementById("meaningInput").value = word.meaning;
     document.getElementById("exampleInput").value = word.example || "";
     document.getElementById("pinyinInput").value = word.pinyin || "";
-    document.getElementById("levelInput").value = word.level || "HSK 1";
     document.getElementById("manualSubmitText").textContent = "Lưu thay đổi";
     document.getElementById("manualSubmitBtn").querySelector("i").className = "fa-solid fa-save";
     document.getElementById("cancelEditBtn").style.display = "inline-block";
@@ -6151,7 +6303,7 @@ async function updateAuthUI(user){
         accountChipName.textContent = "Bạn";
 
         authHeading.innerHTML = `
-            <h2>the second awesome</h2>
+            <h2>My Vocab Chinese</h2>
             <p>Đăng nhập để sử dụng.</p>
         `;
     }
