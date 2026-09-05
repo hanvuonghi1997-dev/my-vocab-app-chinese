@@ -1209,244 +1209,182 @@ tr:hover td{
 }
 </style>
 
-<style id="soft-eye-theme">
+<style id="chinese-theme-final">
 :root{
   --bg:#F2C4CD !important;
-  --panel:#051F45 !important;
+  --panel:#0B2A57 !important;
   --panel2:#051F45 !important;
-
-  /* softer, less glaring text */
-  --text:#E8DDE1 !important;
-  --muted:#B9AEB3 !important;
-
-  /* pink is used as a restrained detail/accent */
-  --accent:#F2C4CD !important;
-  --accent-soft:#E8AEBB !important;
-
+  --border:rgba(242,196,205,.45) !important;
+  --text:#F6F1F3 !important;
+  --muted:#D8E0EC !important;
+  --accent:#051F45 !important;
+  --accent-soft:#051F45 !important;
   --primary:#F2C4CD !important;
   --primary-color:#F2C4CD !important;
-
-  --border:rgba(242,196,205,.22) !important;
-  --success:#79B89A !important;
-  --danger:#C9828C !important;
-  --warning:#C9A46A !important;
-
-  --shadow:0 12px 35px rgba(5,31,69,.16) !important;
 }
-
-/* Main background */
-body,
-#authScreen,
-.app{
+body{
   background:#F2C4CD !important;
-  color:#E8DDE1 !important;
+  color:#F6F1F3 !important;
 }
+.app{background:#F2C4CD !important}
 
-/* Main dark surfaces */
-.card,.panel,.review-card,.stat-card,.table-wrapper,
-.vault-card,.word-card,.setup-card{
-  background:#051F45 !important;
-  color:#E8DDE1 !important;
-  border:1px solid rgba(242,196,205,.22) !important;
-}
-
-/* Do NOT force bright white on every child */
-.card *, .panel *, .review-card *, .stat-card *,
-.table-wrapper *, .vault-card *, .word-card *, .setup-card *{
-  color:#E8DDE1;
-}
-
-.brand h1,.header *{
-  color:#E8DDE1 !important;
-}
-.brand small,.muted,.secondary-text,.hint,.help-text,
-.page-title p,.stat-label,.growth-top,.question-label,
-.review-count{
-  color:#B9AEB3 !important;
-}
-
-/* Header / navigation */
-.header{
-  background:transparent !important;
-}
-.tabs{
-  background:rgba(5,31,69,.96) !important;
-  border:1px solid rgba(242,196,205,.20) !important;
-}
-.tab{
-  color:#B9AEB3 !important;
-}
-.tab:hover{
-  color:#F2C4CD !important;
-  background:rgba(242,196,205,.08) !important;
-}
-.tab.active{
-  color:#051F45 !important;
-  background:#F2C4CD !important;
-}
-.logo{
-  background:#051F45 !important;
-  color:#F2C4CD !important;
-}
-
-/* Inputs: no near-white box */
-input,select,textarea,
-.setup-option{
+/* Main surfaces: navy stays dominant, pink is the detail color */
+.card,.panel,.review-card,.stat-card,.table-wrapper,.vault-card,.word-card,.setup-card{
   background:#0B2A57 !important;
-  color:#E8DDE1 !important;
-  border:1px solid rgba(242,196,205,.25) !important;
+  color:#F6F1F3 !important;
+  border:1.5px solid rgba(242,196,205,.42) !important;
 }
-input::placeholder,
-textarea::placeholder{
-  color:#8F858A !important;
-  opacity:1 !important;
+
+/* All normal text inside the dark theme must remain readable */
+.card *, .panel *, .review-card *, .stat-card *, .table-wrapper *,
+.vault-card *, .word-card *, .setup-card *{color:#F6F1F3}
+.brand h1,.brand small,.header *{color:#F6F1F3 !important}
+.brand small,.muted,.secondary-text,.hint,.help-text{color:#D8E0EC !important}
+
+/* Inputs stay light so typed text is always visible */
+input,select,textarea{
+  background:#F6F1F3 !important;
+  color:#F2C4CD !important;
+  border:1.5px solid #051F45 !important;
 }
+input::placeholder,textarea::placeholder{color:#667085 !important;opacity:1 !important}
 input:focus,select:focus,textarea:focus{
-  border-color:#E8AEBB !important;
-  outline:none !important;
-  box-shadow:0 0 0 3px rgba(232,174,187,.10) !important;
-}
-.select option{
-  background:#051F45 !important;
-  color:#E8DDE1 !important;
+  border-color:#051F45 !important;
+  outline:2px solid rgba(242,196,205,.35) !important;
 }
 
-/* Buttons */
-.btn-primary,
-.primary-btn,.add-btn,.save-btn,.submit-btn,
+/* Primary actions */
+.primary-btn,.btn-primary,.add-btn,.save-btn,.submit-btn,
 button[onclick*="signIn"],button[onclick*="signUp"]{
-  background:#F2C4CD !important;
-  color:#051F45 !important;
-  border:1px solid #F2C4CD !important;
+  background:#051F45 !important;
+  color:#F2C4CD !important;
+  border:1.5px solid #051F45 !important;
 }
-.btn-secondary,.secondary-btn{
+
+/* Secondary actions remain navy with a pink border */
+.secondary-btn,.btn-secondary{
   background:#0B2A57 !important;
-  color:#E8DDE1 !important;
-  border:1px solid rgba(242,196,205,.25) !important;
+  color:#051F45 !important;
+  border:1.5px solid #051F45 !important;
 }
-.btn-secondary:hover,.secondary-btn:hover{
-  background:#12345F !important;
-}
-.btn-danger{
-  color:#D99AA3 !important;
-  background:rgba(201,130,140,.10) !important;
-}
-.btn-success{
-  color:#09271B !important;
-  background:#79B89A !important;
-}
+
+/* Navigation/header */
+.nav,.header,.topbar{background:#F2C4CD !important;color:#F6F1F3 !important}
+.nav *, .header *, .topbar *{color:#F6F1F3 !important}
+.logo{background:#051F45 !important;color:#F2C4CD !important}
 
 /* Tables */
-th{
-  background:#051F45 !important;
-  color:#DDB4BF !important;
-  border-color:rgba(242,196,205,.20) !important;
-}
-td{
-  background:#051F45 !important;
-  color:#E8DDE1 !important;
-  border-top:1px solid rgba(242,196,205,.14) !important;
-}
-tr:hover td{
+th{background:#051F45 !important;color:#F2C4CD !important;border-color:#051F45 !important}
+td{background:#0B2A57 !important;color:#F6F1F3 !important;border-bottom:1px solid rgba(242,196,205,.25) !important}
+
+/* Review choices / cards */
+.option,.mode-btn,.tf-btn,.review-option,.choice{
   background:#0B2A57 !important;
+  color:#F6F1F3 !important;
+  border:1.5px solid rgba(242,196,205,.55) !important;
 }
-
-/* Learning choices */
-.option,.mode-btn,.tf-btn,.review-option,.choice,.match-card{
+.option:hover,.mode-btn:hover,.tf-btn:hover,.review-option:hover,.choice:hover{
   background:#051F45 !important;
-  color:#E8DDE1 !important;
-  border:1px solid rgba(242,196,205,.22) !important;
-}
-.option:hover,.mode-btn:hover,.tf-btn:hover,
-.review-option:hover,.choice:hover,.match-card:hover{
-  background:#0B2A57 !important;
   color:#F2C4CD !important;
-  border-color:#E8AEBB !important;
-}
-.mode-btn.active{
-  background:#F2C4CD !important;
-  color:#051F45 !important;
-  border-color:#F2C4CD !important;
-}
-.match-card.selected{
-  background:rgba(242,196,205,.14) !important;
-}
-.match-card.matched{
-  opacity:.45;
+  border-color:#051F45 !important;
 }
 
-/* Flashcard */
-.flash-face{
-  background:linear-gradient(145deg,#051F45,#0B2A57) !important;
-}
-.flash-word,.word,.accent,.highlight{
-  color:#F2C4CD !important;
-}
+/* Pink details */
+.badge,.tag,.pill{background:#051F45 !important;color:#F2C4CD !important}
+.progress-fill{background:#051F45 !important}
+.logo,.accent,.highlight{color:#F2C4CD}
 
-/* Progress / badges */
-.progress,
-.test-progress-bar{
-  background:rgba(5,31,69,.28) !important;
-}
-.progress-bar,.test-progress-fill{
-  background:#F2C4CD !important;
-}
-.badge,.tag,.pill{
-  background:#0B2A57 !important;
-  color:#F2C4CD !important;
-}
-
-/* Auth */
+/* Auth screen follows the same palette */
+#authScreen{background:#F2C4CD !important;color:#F6F1F3 !important}
 .auth-card{
-  background:#051F45 !important;
-  color:#E8DDE1 !important;
-  border:1px solid rgba(242,196,205,.25) !important;
-  box-shadow:0 24px 70px rgba(5,31,69,.22) !important;
-}
-.auth-card *{
-  color:#E8DDE1;
-}
-.auth-card input{
   background:#0B2A57 !important;
-  color:#E8DDE1 !important;
+  color:#F6F1F3 !important;
+  border:1.5px solid rgba(242,196,205,.55) !important;
 }
-.auth-card button{
-  background:#F2C4CD !important;
-  color:#051F45 !important;
-}
-.auth-heading p,.auth-message,.auth-sync-note,
-.auth-status span{
-  color:#B9AEB3 !important;
-}
-.auth-password-toggle{
-  color:#B9AEB3 !important;
-  background:transparent !important;
-}
-.auth-status{
-  background:rgba(121,184,154,.07) !important;
-  border-color:rgba(121,184,154,.20) !important;
-}
-.auth-status-icon{
-  background:#79B89A !important;
-  color:#09271B !important;
+.auth-card *{color:#F6F1F3}
+.auth-card input{background:#F6F1F3 !important;color:#F2C4CD !important}
+.auth-card button{background:#051F45 !important;color:#F2C4CD !important}
+
+
+/* =========================================================
+   FINAL UI FIX — HEADER VISIBILITY + CLICK TO SHOW PINYIN
+   ========================================================= */
+
+.page-title h2 {
+    color: #051F45 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-/* Toast */
-.toast{
-  background:#0B2A57 !important;
-  color:#E8DDE1 !important;
-  border-color:rgba(242,196,205,.22) !important;
+.page-title p {
+    color: #6F5961 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-/* PAGE TITLE — explicit contrast on the pink background */
-.page-title h2{
-  color:#051F45 !important;
-  font-weight:800 !important;
-  text-shadow:none !important;
+.header .brand,
+.header .brand h1,
+.header .brand h1 *,
+.header .brand small,
+.header .brand small * {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
-.page-title p{
-  color:#6F5961 !important;
-  font-weight:500 !important;
+
+.header .brand h1 {
+    color: #051F45 !important;
+    font-weight: 800 !important;
+}
+
+.header .brand small {
+    color: #6F5961 !important;
+    font-weight: 500 !important;
+}
+
+.account-chip,
+.account-chip *,
+.account-chip-text,
+.account-chip-text *,
+.account-chip-name {
+    color: #051F45 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.account-chip {
+    background: rgba(5,31,69,.08) !important;
+    border-color: rgba(5,31,69,.18) !important;
+}
+
+/* Pinyin is hidden by default and appears only after clicking the word. */
+.word-display {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    cursor: pointer !important;
+    user-select: none;
+}
+
+.word-display.has-pronunciation:hover .word {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.inline-pronunciation {
+    display: none !important;
+    margin-top: 5px;
+    color: #B9AEB3 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+}
+
+.word-display.pinyin-visible .inline-pronunciation {
+    display: block !important;
+}
+
+.word-display:hover .word {
+    opacity: .78;
 }
 </style>
 
@@ -2277,7 +2215,11 @@ function renderWordDisplay(word){
     const pinyin = String(word.pinyin || "").trim();
 
     return `
-        <span class="word-display" title="${pinyin ? escapeHTML(pinyin) : ""}">
+        <span
+            class="word-display${pinyin ? " has-pronunciation" : ""}"
+            onclick="toggleInlinePinyin(this)"
+            title="${pinyin ? "Click để hiện Pinyin" : ""}"
+        >
             <span class="word">${escapeHTML(word.word)}</span>
             ${pinyin ? `<span class="inline-pronunciation">${escapeHTML(pinyin)}</span>` : ""}
         </span>
@@ -2286,7 +2228,14 @@ function renderWordDisplay(word){
 
 
 function toggleInlinePinyin(element){
-    return;
+    if(!element || !element.querySelector(".inline-pronunciation")) return;
+
+    element.classList.toggle("pinyin-visible");
+
+    const visible = element.classList.contains("pinyin-visible");
+    element.title = visible
+        ? "Click để ẩn Pinyin"
+        : "Click để hiện Pinyin";
 }
 
 
