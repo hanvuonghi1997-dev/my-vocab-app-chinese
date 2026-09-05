@@ -1241,11 +1241,17 @@ body{
 .brand h1,.brand small,.header *{color:#F6F1F3 !important}
 .brand small,.muted,.secondary-text,.hint,.help-text{color:#D8E0EC !important}
 
-/* Inputs stay light so typed text is always visible */
+/* Inputs: use dark navy text for strong contrast while typing */
 input,select,textarea{
   background:#F6F1F3 !important;
-  color:#F2C4CD !important;
+  color:#051F45 !important;
   border:1.5px solid #051F45 !important;
+  caret-color:#051F45 !important;
+}
+
+input::selection,textarea::selection{
+  background:#F2C4CD !important;
+  color:#051F45 !important;
 }
 input::placeholder,textarea::placeholder{color:#667085 !important;opacity:1 !important}
 input:focus,select:focus,textarea:focus{
@@ -1356,7 +1362,48 @@ td{background:#0B2A57 !important;color:#F6F1F3 !important;border-bottom:1px soli
     border-color: rgba(5,31,69,.18) !important;
 }
 
-/* Pinyin is hidden by default and appears only after clicking the word. */
+/* =========================================================
+   FINAL CONTRAST FIX — TYPED TEXT + HEADER PROGRESS
+   ========================================================= */
+
+/* Typed text must be dark navy, not pale pink */
+input,
+select,
+textarea,
+.input,
+.select,
+.textarea,
+.auth-input-wrap input {
+    color: #051F45 !important;
+    caret-color: #051F45 !important;
+}
+
+/* Header progress text sits on the pink background */
+.header .growth-top,
+.header .growth-top *,
+.header .streak,
+.header .streak *,
+#streakCount,
+#treeLevel,
+#treeProgressText {
+    color: #051F45 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Keep the progress bar visually consistent */
+.header .progress {
+    background: rgba(5,31,69,.12) !important;
+}
+
+.header .progress-bar {
+    background: #051F45 !important;
+}
+
+/* =========================================================
+   Pinyin is hidden by default and appears only after clicking the word.
+   ========================================================= */
+
 .word-display {
     display: inline-flex !important;
     flex-direction: column !important;
