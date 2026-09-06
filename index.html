@@ -3028,6 +3028,9 @@ let currentPracticeWord =
 let testSession =
     null;
 
+// Khong render lai TEST khi chi chuyen tab.
+let learnInitialized = false;
+
 let matchState =
     null;
 
@@ -3113,6 +3116,8 @@ function completeIndividual(word){
 ========================================================= */
 
 function renderLearn(){
+
+    learnInitialized = true;
 
     const area =
         document.getElementById(
@@ -4329,6 +4334,7 @@ function renderTest(area){
 
             testSession =
                 null;
+            learnInitialized = false;
 
             renderLearn();
         };
@@ -4618,6 +4624,8 @@ function renderTestMCQ(
 
                         testSession.current =
                             nextTestWord();
+                        testSession.currentType =
+                            null;
 
                         renderLearn();
 
@@ -4946,6 +4954,8 @@ function renderTestTrueFalse(
 
                         testSession.current =
                             nextTestWord();
+                        testSession.currentType =
+                            null;
 
                         renderLearn();
 
@@ -5933,8 +5943,11 @@ document
                     target ===
                     "learn"
                 ){
-
-                    renderLearn();
+                    // Chi render lan dau. Quay lai tab se giu nguyen
+                    // cau hoi, lua chon va noi dung dang lam do.
+                    if(!learnInitialized){
+                        renderLearn();
+                    }
                 }
 
             }
@@ -5988,7 +6001,7 @@ document
                 matchState =
                     null;
 
-
+                learnInitialized = false;
                 renderLearn();
 
             }
