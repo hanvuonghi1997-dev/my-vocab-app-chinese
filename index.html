@@ -753,6 +753,23 @@ tr:hover td{
     transition:width .3s ease;
 }
 
+/* REVIEW / TEST PROGRESS — visible on navy cards */
+.test-progress-bar{
+    background:rgba(255,255,255,.18) !important;
+    border:1px solid rgba(242,196,205,.25);
+}
+
+.test-progress-fill{
+    background:#F2C4CD !important;
+    box-shadow:0 0 8px rgba(242,196,205,.45);
+}
+
+.test-progress-top,
+.test-progress-top *{
+    color:#F6F1F3 !important;
+    opacity:1 !important;
+}
+
 .test-type{
     display:inline-flex;
     padding:6px 10px;
@@ -4148,6 +4165,9 @@ function createTestSession(){
             pool.length,
 
         current:
+            null,
+
+        currentType:
             null
     };
 }
@@ -4324,6 +4344,9 @@ function renderTest(area){
 
         testSession.current =
             nextTestWord();
+
+        testSession.currentType =
+            null;
     }
 
 
@@ -4364,7 +4387,7 @@ function renderTest(area){
 
                     <div
                         class="test-progress-fill"
-                        style="width:${percentage}%"
+                        style="width:${percentage}%;min-width:${percentage > 0 ? '6px' : '0'}"
                     ></div>
 
                 </div>
@@ -4409,8 +4432,12 @@ function renderTestQuestion(
     ];
 
 
+    if(!testSession.currentType){
+        testSession.currentType = randomItem(types);
+    }
+
     const type =
-        randomItem(types);
+        testSession.currentType;
 
 
     if(type === "mcq"){
@@ -5161,7 +5188,7 @@ function renderReviewProgress(){
 
                 <div
                     class="test-progress-fill"
-                    style="width:${percentage}%"
+                    style="width:${percentage}%;min-width:${percentage > 0 ? '6px' : '0'}"
                 ></div>
 
             </div>
